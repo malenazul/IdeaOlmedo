@@ -2,6 +2,7 @@
 import React from "react";
 import avion from "./rocket.png";
 import "./NavBar.css";
+import CartWidget from "../CartWidget/CartWidget";
 
 export default function NavBar() {
   return (
@@ -18,6 +19,7 @@ export default function NavBar() {
           width="3%"
           height="3%"
         />
+          <CartWidget/>
         <button
           className="navbar-toggler"
           type="button"
@@ -99,7 +101,9 @@ export default function NavBar() {
             </li>
           </ul>
         </div>
+       
       </div>
     </nav>
+
   );
 }
