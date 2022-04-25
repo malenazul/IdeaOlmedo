@@ -1,0 +1,16 @@
+.ms-5{
+    margin-left: 28rem !important;
+    margin-right: 5rem !important;
+   
+}
+.btn-outline-warning{
+    font-size:1rem !important;
+    font-weight:bold;
+}
+.txt{
+    margin:0.4rem;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:#660066;
+    font-size:1.1rem;
+   
+}
