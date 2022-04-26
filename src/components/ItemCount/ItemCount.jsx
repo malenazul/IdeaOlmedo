@@ -3,10 +3,7 @@
 import React from "react";
 import "./ItemCount.css";
 
-const ItemCount = ({stock, initial, onAdd, onSubstract, disponibles}) => {
- 
-
- 
+const ItemCount = ({ stock, initial, onAdd, onSubstract, disponibles }) => {
   return (
     <div className="row" style={{ float: "center", margin: "2%" }}>
       <div style={{ float: "left", display: "flex" }}>

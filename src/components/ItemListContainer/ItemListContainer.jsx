@@ -9,18 +9,20 @@ import "./ItemListContainer.css";
 import ItemCount from "../ItemCount/ItemCount";
 import { useState } from "react";
 const ItemListContainer = ({ greeting }) => {
-
   const [contador, setContador] = useState(0);
   let stock = 10;
-
 
   return (
     // eslint-disable-next-line jsx-a11y/anchor-is-valid
 
-
     <div className="container" id="listContainer">
       <h3 className="txt1">{greeting}</h3>
-      <ItemCount stock={stock} initial={contador} onAdd={() => setContador(contador + 1)} onSubstract={() => setContador(contador - 1)} ></ItemCount>
+      <ItemCount
+        stock={stock}
+        initial={contador}
+        onAdd={() => setContador(contador + 1)}
+        onSubstract={() => setContador(contador - 1)}
+      ></ItemCount>
       <div className="row" style={{ float: "center" }}>
         <Card
           imagen={roma}
