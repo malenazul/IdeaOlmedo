@@ -8,9 +8,15 @@
     font-weight:bold;
 }
 .txt{
-    margin:0.4rem;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color:#660066;
     font-size:1.1rem;
+  
+   margin-top: 0.5rem;
+   
+}
+.boton{
+    margin-left: 2.4rem !important;
+    margin-bottom: 1rem !important;
    
 }
