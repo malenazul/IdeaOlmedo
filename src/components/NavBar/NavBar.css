@@ -1,13 +1,19 @@
-.container-fluid {
+.navStyle {
   background: linear-gradient(
     to bottom,
-    #ffffff 0%,
+    #ffdb4d 0%,
     #a146dd 100%,
     #ad1283 100%
   );
   align-content: flex-start;
   text-align:left;
   float: left;
+}
+.nav-item{
+  color: #660066 !important;
+  font-size: 1.03rem;
+  text-shadow: #CCC 1.5px 0 3px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 
