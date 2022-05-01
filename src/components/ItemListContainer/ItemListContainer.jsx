@@ -1,9 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useState } from "react";
-import roma from "../ItemListContainer/roma.jpg";
-import barcelona from "../ItemListContainer/barcelona.jpg";
-import berlin from "../ItemListContainer/berlin.jpeg";
-import paris from "../ItemListContainer/paris.jpg";
 import "./ItemListContainer.css";
 import ItemCount from "../ItemCount/ItemCount";
 import ItemList from "../ItemList/ItemList";
