@@ -1,11 +1,17 @@
 
-.txt2{
+.txt2i{
     margin:0.4rem;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color:#660066 !important;
     font-size:1rem !important;
 }
-.txt3{
+.txt2t{
+    margin:0.4rem;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:#660066 !important;
+    font-size:1.08rem !important;
+}
+.txt3i{
     margin:0.4rem;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color:#660066 !important;

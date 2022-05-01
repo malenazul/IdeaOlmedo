@@ -15,9 +15,9 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     setContador(contador - 1);
   }
   return (
-    <div className="row">
-    <div className="row" style={{ float: "center", margin: "2%" }}>
-      <div style={{ float: "left", display: "flex" }}>
+    <div className="row col-12">
+    <div className="row col-12" style={{ float: "center", margin: "2%" }}>
+      <div style={{ float: "center", display: "flex" }}>
         <button
           className="btn btn-outline-warning"
           onClick={contador > initial ? onRestar : console.log("Ya no puede restar")}
@@ -42,7 +42,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
           className="btn btn-outline-info"
           onClick={onAdd}
           style={{ width: "18.9rem" }}
-        >Agregar al carrito</button>
+        >Agregar al carrito {contador}</button>
     </div>
     </div>
   );

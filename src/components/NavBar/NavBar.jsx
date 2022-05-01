@@ -8,7 +8,7 @@ export default function NavBar() {
   return (
     // eslint-disable-next-line react/style-prop-object
     <nav id="navBar" className="navbar navbar-expand-lg navbar-light bg-light">
-      <div className="container-fluid">
+      <div className="container-fluid navStyle">
         <a className="navbar-brand" href="#">
           TravelFun
         </a>
