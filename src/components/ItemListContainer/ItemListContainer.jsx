@@ -8,46 +8,47 @@ import { useParams } from "react-router-dom";
 const ItemListContainer = ({ greeting }) => {
   let stock = 10;
   let initial = 0;
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
   const ciudades = [
     {
-      id: 1,
+      id: "Q220",
       title: "Roma",
       continent: "Europa",
       description:
         "La capital de Italia, es una extensa ciudad cosmopolita que tiene a la vista casi 3,000 años de arte, arquitectura y cultura de influencia mundial.",
       price: 450,
-      pictureUrl: "https://www.caracteristicas.co/wp-content/uploads/2017/02/imperio-romano-e1562350281661.jpg",
+      pictureUrl:
+        "https://www.caracteristicas.co/wp-content/uploads/2017/02/imperio-romano-e1562350281661.jpg",
     },
     {
-      id: 2,
+      id: "Q90",
       title: "Paris",
       continent: "Europa",
       description:
         "La capital de Francia, es una importante ciudad europea y un centro mundial del arte, la moda, la gastronomía y la cultura.",
       price: 415,
-      pictureUrl:"https://www.diarioelnorte.com.ar/wp-content/uploads/2021/12/istockphoto-1145422105-612x612-1.jpg",
+      pictureUrl:
+        "https://www.diarioelnorte.com.ar/wp-content/uploads/2021/12/istockphoto-1145422105-612x612-1.jpg",
     },
     {
-      id: 3,
+      id: "Q64",
       title: "Berlin",
       continent: "Europa",
       description:
         "La capital alemana, data del siglo XIII. Los elementos que recuerdan la turbulenta historia de la ciudad en el siglo XX incluyen el Monumento del Holocausto y los restos del Muro de Berlín con grafitis.",
       price: 380,
-      pictureUrl:"https://cdn2.civitatis.com/alemania/berlin/free-tour-berlin-grid.jpg",
+      pictureUrl:
+        "https://cdn2.civitatis.com/alemania/berlin/free-tour-berlin-grid.jpg",
     },
     {
-      id: 4,
+      id: "Q1492",
       title: "Barcelona",
       continent: "Europa",
       description:
         "La capital cosmopolita de la región de Cataluña en España, es conocida por su arte y arquitectura. La fantástica iglesia de la Sagrada Familia y otros hitos modernistas diseñados por Antoni Gaudí adornan la ciudad.",
       price: 480,
-      pictureUrl: "https://fotos.hoteles.net/articulos/guia-barcelona-ciudad-2400-1.jpg",
+      pictureUrl:
+        "https://fotos.hoteles.net/articulos/guia-barcelona-ciudad-2400-1.jpg",
     },
     {
       id: "Q1486",
@@ -112,15 +113,10 @@ const ItemListContainer = ({ greeting }) => {
         resolve(continente);
       }, 1000);
     });
-<<<<<<< Updated upstream
 
-    pedido.then(
-        (res) => setCiudad(res),
-=======
     pedido
       .then(
         (res) => getCont(res),
->>>>>>> Stashed changes
         (err) => {
           console.log("error", err);
         }
@@ -130,8 +126,6 @@ const ItemListContainer = ({ greeting }) => {
   }, [continente]);
 
   return (
-    // eslint-disable-next-line jsx-a11y/anchor-is-valid
-
     <div className="col-12" id="listContainer">
       <div
         className="row col-12"

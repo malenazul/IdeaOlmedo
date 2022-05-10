@@ -16,6 +16,7 @@ const ItemList = ({ ciudades }) => {
               texto={ciudad.description}
               nombre={ciudad.title}
               precio={ciudad.price}
+              id={ciudad.id}
             ></Item>
           </React.Fragment>
         ))

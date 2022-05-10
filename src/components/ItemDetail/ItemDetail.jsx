@@ -8,7 +8,7 @@ const ItemDetail = ({
   pais,
   region,
   population,
-  price,
+  price
 }) => {
   return (
     <>
@@ -27,6 +27,7 @@ const ItemDetail = ({
         <h4 className="txtd">Precio: USD {price}</h4>
       </div>
     </>
+
   );
 };
 
