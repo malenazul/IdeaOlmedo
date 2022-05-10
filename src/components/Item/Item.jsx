@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Item.css";
+import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer";
 
-const Item = ({imagen, texto, nombre, precio }) => {
+const Item = ({ imagen, texto, nombre, precio, id }) => {
+  const [visible, setVisible] = useState(false);
+
+  function onDetail() {
+    visible === false ? setVisible(true) : setVisible(false);
+  }
+
+  useEffect(() => {
+    return () => {};
+  }, []);
+
   return (
     <div
       className="card"
@@ -15,15 +26,29 @@ const Item = ({imagen, texto, nombre, precio }) => {
       <h3 className="txt2t">{nombre}</h3>
       <img src={imagen} className="card-img-top" alt={nombre} />
       <div className="card-body">
-        <p className="card-text txt3">{texto}</p>
         <button
           className="btn btn-outline-info"
           style={{ width: "10rem" }}
-        >Mas Detalles</button>
-     <h5 className="txt2i">Precio:  €{precio}</h5>
-    </div>
+          onClick={onDetail}
+        >
+          Mas Detalles
+        </button>
+
+        <div className="row col-12" style={{ float: "center" }}>
+          <>
+            {visible ? (
+              <ItemDetailContainer
+                id={id}
+                precio={precio}
+                texto={texto}
+              ></ItemDetailContainer>
+            ) : (
+              ""
+            )}
+          </>
+        </div>
       </div>
-   
+    </div>
   );
 };
 
