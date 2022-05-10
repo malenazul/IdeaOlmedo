@@ -3,6 +3,7 @@ import React from "react";
 import avion from "./rocket.png";
 import "./NavBar.css";
 import CartWidget from "../CartWidget/CartWidget";
+import { NavLink } from "react-router-dom";
 
 export default function NavBar() {
   return (
@@ -34,24 +35,24 @@ export default function NavBar() {
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
+              <NavLink className="nav-link active" aria-current="page" to="/">
                 Home
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Paquetes
-              </a>
+              <NavLink className="nav-link"  to="/ItemListContainer/Europa">
+              Europa
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Alojamientos
-              </a>
+            <NavLink className="nav-link"  to="/ItemListContainer/America">
+              America
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Viajes
-              </a>
+              <NavLink className="nav-link" to="/ItemListContainer/Asia">
+                Asia
+              </NavLink>
             </li>
             <li className="nav-item dropdown">
               <a

@@ -1,53 +1,54 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useEffect, useState } from "react";
-import "./ItemListContainer.css";
-import ItemCount from "../ItemCount/ItemCount";
-import ItemList from "../ItemList/ItemList";
+import React from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
 
-const ItemListContainer = ({ greeting }) => {
-  let stock = 10;
-  let initial = 0;
-<<<<<<< Updated upstream
-=======
+const ItemDetailContainer = () => {
+  const { detail } = useParams();
+  const [todos, setTodos] = useState();
+  const [ciudad, setCiudad] = useState([]);
 
->>>>>>> Stashed changes
   const ciudades = [
     {
-      id: 1,
+      id: "Q220",
       title: "Roma",
       continent: "Europa",
       description:
         "La capital de Italia, es una extensa ciudad cosmopolita que tiene a la vista casi 3,000 años de arte, arquitectura y cultura de influencia mundial.",
       price: 450,
-      pictureUrl: "https://www.caracteristicas.co/wp-content/uploads/2017/02/imperio-romano-e1562350281661.jpg",
+      pictureUrl:
+        "https://www.caracteristicas.co/wp-content/uploads/2017/02/imperio-romano-e1562350281661.jpg",
     },
     {
-      id: 2,
+      id: "Q90",
       title: "Paris",
       continent: "Europa",
       description:
         "La capital de Francia, es una importante ciudad europea y un centro mundial del arte, la moda, la gastronomía y la cultura.",
       price: 415,
-      pictureUrl:"https://www.diarioelnorte.com.ar/wp-content/uploads/2021/12/istockphoto-1145422105-612x612-1.jpg",
+      pictureUrl:
+        "https://www.diarioelnorte.com.ar/wp-content/uploads/2021/12/istockphoto-1145422105-612x612-1.jpg",
     },
     {
-      id: 3,
+      id: "Q64",
       title: "Berlin",
       continent: "Europa",
       description:
         "La capital alemana, data del siglo XIII. Los elementos que recuerdan la turbulenta historia de la ciudad en el siglo XX incluyen el Monumento del Holocausto y los restos del Muro de Berlín con grafitis.",
       price: 380,
-      pictureUrl:"https://cdn2.civitatis.com/alemania/berlin/free-tour-berlin-grid.jpg",
+      pictureUrl:
+        "https://cdn2.civitatis.com/alemania/berlin/free-tour-berlin-grid.jpg",
     },
     {
-      id: 4,
+      id: "Q1492",
       title: "Barcelona",
       continent: "Europa",
       description:
         "La capital cosmopolita de la región de Cataluña en España, es conocida por su arte y arquitectura. La fantástica iglesia de la Sagrada Familia y otros hitos modernistas diseñados por Antoni Gaudí adornan la ciudad.",
       price: 480,
-      pictureUrl: "https://fotos.hoteles.net/articulos/guia-barcelona-ciudad-2400-1.jpg",
+      pictureUrl:
+        "https://fotos.hoteles.net/articulos/guia-barcelona-ciudad-2400-1.jpg",
     },
     {
       id: "Q1486",
@@ -91,67 +92,74 @@ const ItemListContainer = ({ greeting }) => {
     },
   ];
 
-  const [ciudad, setCiudad] = useState([]);
-  const { continente } = useParams();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  function getCont(res) {
-    if (continente) {
-      setCiudad(
-        ciudades.filter((c, i) =>
-          continente.length > 0 ? continente.indexOf(c.continent) === 0 : true
-        )
-      );
-    } else {
-      setCiudad(ciudades);
-    }
+  //const [idi,setIdi] = useState("");
+
+  const options = {
+    method: "GET",
+    url: `https://wft-geo-db.p.rapidapi.com/v1/geo/cities/` + detail,
+    params: { languageCode: "es" },
+    headers: {
+      "X-RapidAPI-Host": "wft-geo-db.p.rapidapi.com",
+      "X-RapidAPI-Key": "b55ac38178msh39d55c0f09c4399p1b9677jsn8c13eb6a907a",
+    },
+  };
+
+  const getItem = async () => {
+    const response = await axios.request(options);
+    const responseJSON = await response.data;
+
+    setTodos(responseJSON);
+  };
+  //    const ciudi = ciudades.filter(val => val.id.includes(detail))
+  function getCity() {
+    const citi = ciudades.filter((c, i) =>
+      detail.length > 0 ? detail.indexOf(c.id) === 0 : true
+    );
+    setCiudad(citi[0]);
   }
 
+  //   }
   useEffect(() => {
     const pedido = new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve(continente);
+        resolve(getItem());
       }, 1000);
     });
-<<<<<<< Updated upstream
-
-    pedido.then(
-        (res) => setCiudad(res),
-=======
     pedido
       .then(
-        (res) => getCont(res),
->>>>>>> Stashed changes
+        (res) => getCity(),
         (err) => {
           console.log("error", err);
         }
       )
       .catch((err) => console.log(err));
+
     return () => {};
-  }, [continente]);
+  }, [detail]);
 
   return (
-    // eslint-disable-next-line jsx-a11y/anchor-is-valid
-
-    <div className="col-12" id="listContainer">
-      <div
-        className="row col-12"
-        style={{ float: "center", display: "flex", margin: "1%" }}
-      >
-        <h3 className="txt1">{greeting}</h3>
-      </div>
-
-      <div className="row col-12" style={{ float: "center" }}>
-        <ItemCount
-          stock={stock}
-          initial={initial}
-          onAdd={() => console.log("Se agregaron los elementos")}
-        ></ItemCount>
-      </div>
-      <div className="row col-12" style={{ float: "center", margin: "1%" }}>
-        <ItemList ciudades={ciudad}></ItemList>
-      </div>
+    <div className="card col-11 m-2">
+      <>
+        {!todos ? (
+          <div className="row col-12">
+            <h5 className="txt2l">Cargando...</h5>
+          </div>
+        ) : (
+          <React.Fragment>
+            <ItemDetail
+              ciudad={ciudad["title"]}
+              imagen={ciudad["pictureUrl"]}
+              texto={ciudad["description"]}
+              pais={todos.data["country"]}
+              region={todos.data["region"]}
+              population={todos.data["population"]}
+              price={ciudad["price"]}
+            ></ItemDetail>
+          </React.Fragment>
+        )}
+      </>
     </div>
   );
 };
 
-export default ItemListContainer;
+export default ItemDetailContainer;

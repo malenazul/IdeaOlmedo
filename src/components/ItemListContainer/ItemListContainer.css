@@ -4,8 +4,8 @@ align-items: initial;
 
 .txt1{
     margin:0.4rem;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family:"Proxima Nova",-apple-system,"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif,sans-serif;
     color:#660066;
-    font-size:1.5rem !important;
+    font-size:2rem !important;
    
 }

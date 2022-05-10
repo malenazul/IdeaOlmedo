@@ -1,22 +1,29 @@
-.ms-5{
+/* .ms-5{
     margin-left: 28rem !important;
     margin-right: 5rem !important;
    
-}
+} */
 .btn-outline-warning{
     font-size:1rem !important;
     font-weight:bold;
 }
 .txt{
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family:"Proxima Nova",-apple-system,"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif,sans-serif;;
     color:#660066;
     font-size:1.1rem;
   
    margin-top: 0.5rem;
+   margin-left: 1rem !important;
    
 }
 .boton{
-    margin-left: 2.4rem !important;
+    
     margin-bottom: 1rem !important;
-   
+    margin-left: 3%;
+    margin-top:1%;
+}
+
+.count{
+    margin-top:1%;
+    margin-left: 3%;
 }
