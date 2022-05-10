@@ -14,7 +14,7 @@ const Rutas = () => {
           <Route path="/" element={<Layout />}>
             <Route index element={<ItemListContainer greeting="Ciudades" />} />
             <Route
-              path="/ItemListContainer/:continente"
+              path="/Category/:continente"
               element={<ItemListContainer greeting="Ciudades" />}
             />
             <Route

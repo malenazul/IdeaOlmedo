@@ -40,17 +40,17 @@ export default function NavBar() {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link"  to="/ItemListContainer/Europa">
+              <NavLink className="nav-link"  to="/Category/Europa">
               Europa
               </NavLink>
             </li>
             <li className="nav-item">
-            <NavLink className="nav-link"  to="/ItemListContainer/America">
+            <NavLink className="nav-link"  to="/Category/America">
               America
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/ItemListContainer/Asia">
+              <NavLink className="nav-link" to="/Category/Asia">
                 Asia
               </NavLink>
             </li>
