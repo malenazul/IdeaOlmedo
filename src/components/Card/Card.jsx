@@ -13,11 +13,7 @@ const Card = ({ imagen, texto, nombre }) => {
         justifyContent: "space-around",
       }}
     >
-      <h5 className="txt2">{nombre}</h5>
-      <img src={imagen} className="card-img-top" alt={nombre} />
-      <div className="card-body">
-        <p className="card-text txt3">{texto}</p>
-      </div>
+      <h5 className="txt2">Finalizar Compra</h5>
     </div>
   );
 };

@@ -1,19 +1,13 @@
-import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
-import NavBar from "./components/NavBar/NavBar";
 import Rutas from "./routes/Rutas";
-
+import GlobalProvider from './context/GlobalStateContext';
 function App() {
   return (
     <>
-    <Rutas/>
+      <GlobalProvider>
+      <Rutas/>
+      </GlobalProvider>
+    
     </>
-
-    // <div className="App">
-    //   <header className="App-header">
-    //     <NavBar />
-    //     <ItemListContainer greeting="Ciudades" />
-    //   </header>
-    // </div>
   );
 }
 
