@@ -1,8 +1,9 @@
 import React from "react";
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { GlobalContext } from "../../context/CartContext";
 
 const ItemDetail = ({
   ciudad,
@@ -12,14 +13,30 @@ const ItemDetail = ({
   region,
   population,
   price,
+  id,
+  cont
 }) => {
   const [cantidad, setCantidad] = useState();
   let stock = 10;
   let initial = 0;
   const [visible, setVisible] = useState("block");
+  const { ciudades, addItem, clear, isInCart, removeItem, carrito, setCarrito } = useContext(GlobalContext);
+
   function onAdd(contador) {
     setCantidad(contador);
     setVisible("none");
+    let is = isInCart(id);
+    if(!is){
+      addItem({
+        id: id,
+        title: ciudad,
+        continent: cont,
+        description: texto,
+        price: price,
+        pictureUrl: imagen,
+        quantity : contador
+      })
+    }
   }
 
   useEffect(() => {
@@ -33,7 +50,9 @@ const ItemDetail = ({
       .then(
         (res) =>
           cantidad > 0
-            ? console.log("Se agregaron los " + cantidad + " elementos")
+            ? console.log("Se agregaron los elementos" +  carrito.map((e, i)=>{
+              console.log(e)
+            }))
             : "",
         (err) => {
           console.log("error", err);
@@ -67,14 +86,29 @@ const ItemDetail = ({
         <>
           {visible === "none" ? (
             <React.Fragment>
+              <div className = "col-12">
               <button
                 className="btn btn-outline-info"
-                style={{ width: "20rem" }}
+               
+                style={{ width: "20rem", margin: "0.3%",
+                display: "flex",
+                justifyContent: "space-around" }}
               >
                 <NavLink className="nav-link" to="/Cart">
-                  Finalizar Compra de {cantidad} Unidades
+                  Terminar mi compra
                 </NavLink>
               </button>
+              <button
+                className="btn btn-outline-info"
+                style={{ width: "20rem", margin: "0.3%",
+                display: "flex",
+                justifyContent: "space-around" }}
+              >
+                <NavLink className="nav-link" to="/">
+                  Seguir Comprando
+                </NavLink>
+              </button>
+              </div>
             </React.Fragment>
           ) : (
             ""

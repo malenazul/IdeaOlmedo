@@ -3,7 +3,7 @@ import React, { useEffect, useState, useContext } from "react";
 import "./ItemListContainer.css";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
-import { GlobalContext } from "../../context/GlobalStateContext";
+import { GlobalContext } from "../../context/CartContext";
 
 const ItemListContainer = ({ greeting }) => {
   const { ciudades } = useContext(GlobalContext);

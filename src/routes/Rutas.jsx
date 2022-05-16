@@ -5,7 +5,7 @@ import ItemListContainer from "../components/ItemListContainer/ItemListContainer
 import Layout from "../components/Layout/Layout";
 import Error from "../components/Error/Error";
 import ItemDetailContainer from "../components/ItemDetailContainer/ItemDetailContainer";
-import Card from "../components/Card/Card";
+import Cart from "../components/Cart/Cart";
 
 const Rutas = () => {
   return (
@@ -22,7 +22,7 @@ const Rutas = () => {
               path="/Item/:detail"
               element={<ItemDetailContainer/>}
             />
-            <Route path="/Cart" element={<Card />} />
+            <Route path="/Cart" element={<Cart />} />
 
             <Route path="*" element={<Error />} />
           </Route>

@@ -1,6 +1,7 @@
 import React from "react";
 import Item from "../Item/Item";
 import "./ItemList.css";
+import Loader from "../Loader/Loader";
 
 const ItemList = ({ ciudades }) => {
   return (
@@ -19,9 +20,7 @@ const ItemList = ({ ciudades }) => {
             </React.Fragment>
           ))
         ) : (
-          <div className="row col-12">
-            <h4 className="txt2l">Cargando...</h4>
-          </div>
+          <Loader loading="true" />
         )}
       </>
     </div>

@@ -3,7 +3,8 @@ import axios from "axios";
 import { useEffect, useState, useContext } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
-import { GlobalContext } from "../../context/GlobalStateContext";
+import { GlobalContext } from "../../context/CartContext";
+import Loader from "../Loader/Loader";
 
 const ItemDetailContainer = () => {
   const { detail } = useParams();
@@ -56,9 +57,7 @@ const ItemDetailContainer = () => {
     <div className="card col-11 m-2">
       <>
         {!todos ? (
-          <div className="row col-12">
-            <h5 className="txt2l">Cargando...</h5>
-          </div>
+          <Loader loading="true" />
         ) : (
           <React.Fragment>
             <ItemDetail
@@ -69,6 +68,8 @@ const ItemDetailContainer = () => {
               region={todos.data["region"]}
               population={todos.data["population"]}
               price={ciudad["price"]}
+              id={ciudad["id"]}
+              cont={ciudad["continent"]}
             ></ItemDetail>
           </React.Fragment>
         )}
