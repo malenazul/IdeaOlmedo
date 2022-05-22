@@ -9,13 +9,11 @@ import { collection, getDocs, query, where } from "firebase/firestore";
 import Loader from "../Loader/Loader";
 
 const ItemListContainer = ({ greeting }) => {
-  const { ciudades } = useContext(GlobalContext);
   const [loading, setLoading] = useState(false);
 
   const [ciudad, setCiudad] = useState([]);
   const { continente } = useParams();
   // eslint-disable-next-line react-hooks/exhaustive-deps
- 
 
   useEffect(() => {
     setLoading(true);
@@ -32,7 +30,6 @@ const ItemListContainer = ({ greeting }) => {
         setLoading(false);
       });
 
-   
     return () => {};
   }, [continente]);
 

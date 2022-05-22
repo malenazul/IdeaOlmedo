@@ -2,7 +2,7 @@ import React from 'react'
 import "./Card.css";
 import { NavLink } from "react-router-dom";
 import { GlobalContext } from "../../context/CartContext";
-import { useState, useEffect, useContext } from "react";
+import { useContext } from "react";
 
 const Card = ({ imagen, texto, nombre, precio, id, q }) => {
     const {removeItem} = useContext(GlobalContext);

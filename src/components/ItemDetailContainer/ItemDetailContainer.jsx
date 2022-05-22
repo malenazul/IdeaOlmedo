@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
 import Loader from "../Loader/Loader";
@@ -28,10 +28,8 @@ const ItemDetailContainer = () => {
 
     setTodos(responseJSON);
   };
- 
-  useEffect(() => {
-   
 
+  useEffect(() => {
     const miproducto = doc(db, "ciudades", detail);
     getDoc(miproducto)
       .then((prod) => {
