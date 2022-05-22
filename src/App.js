@@ -1,12 +1,13 @@
 import Rutas from "./routes/Rutas";
-import GlobalProvider from './context/CartContext';
+import GlobalProvider from "./context/CartContext";
 function App() {
   return (
     <>
-      <GlobalProvider>
-      <Rutas/>
-      </GlobalProvider>
-    
+      
+        <GlobalProvider>
+          <Rutas />
+        </GlobalProvider>
+      
     </>
   );
 }

@@ -18,7 +18,7 @@ const ItemDetail = ({
 }) => {
   const [cantidad, setCantidad] = useState();
   let stock = 10;
-  let initial = 0;
+  let initial = 1;
   const [visible, setVisible] = useState("block");
   const { ciudades, addItem, clear, isInCart, removeItem, carrito, setCarrito } = useContext(GlobalContext);
 

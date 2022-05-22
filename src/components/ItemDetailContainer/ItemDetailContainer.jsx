@@ -1,16 +1,16 @@
 import React from "react";
 import axios from "axios";
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState} from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
-import { GlobalContext } from "../../context/CartContext";
 import Loader from "../Loader/Loader";
+import { db } from "../../service/firebase";
+import { doc, getDoc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
   const { detail } = useParams();
   const [todos, setTodos] = useState();
   const [ciudad, setCiudad] = useState([]);
-  const { ciudades } = useContext(GlobalContext);
 
   const options = {
     method: "GET",
@@ -28,27 +28,18 @@ const ItemDetailContainer = () => {
 
     setTodos(responseJSON);
   };
-  function getCity() {
-    const citi = ciudades.filter((c, i) =>
-      detail.length > 0 ? detail.indexOf(c.id) === 0 : true
-    );
-    setCiudad(citi[0]);
-  }
-
+ 
   useEffect(() => {
-    const pedido = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(getItem());
-      }, 1000);
-    });
-    pedido
-      .then(
-        (res) => getCity(),
-        (err) => {
-          console.log("error", err);
-        }
-      )
-      .catch((err) => console.log(err));
+   
+
+    const miproducto = doc(db, "ciudades", detail);
+    getDoc(miproducto)
+      .then((prod) => {
+        setCiudad({ id: prod.id, ...prod.data() });
+      })
+      .then(() => {
+        getItem();
+      });
 
     return () => {};
   }, [detail]);
@@ -63,13 +54,13 @@ const ItemDetailContainer = () => {
             <ItemDetail
               ciudad={ciudad["title"]}
               imagen={ciudad["pictureUrl"]}
-              texto={ciudad["description"]}
+              texto={ciudad["text"]}
               pais={todos.data["country"]}
               region={todos.data["region"]}
               population={todos.data["population"]}
               price={ciudad["price"]}
               id={ciudad["id"]}
-              cont={ciudad["continent"]}
+              cont={ciudad["categoryID"]}
             ></ItemDetail>
           </React.Fragment>
         )}

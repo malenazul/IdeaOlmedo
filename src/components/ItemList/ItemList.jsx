@@ -12,9 +12,7 @@ const ItemList = ({ ciudades }) => {
             <React.Fragment key={index}>
               <Item
                 imagen={ciudad.pictureUrl}
-                texto={ciudad.description}
                 nombre={ciudad.title}
-                precio={ciudad.price}
                 id={ciudad.id}
               ></Item>
             </React.Fragment>

@@ -2,7 +2,7 @@ import React from "react";
 import "./Item.css";
 import { NavLink } from "react-router-dom";
 
-const Item = ({ imagen, texto, nombre, precio, id }) => {
+const Item = ({ imagen, nombre, id }) => {
   return (
     <div
       className="card"
