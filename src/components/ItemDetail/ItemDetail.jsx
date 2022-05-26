@@ -91,8 +91,8 @@ const ItemDetail = ({
           onAdd={onAdd}
         ></ItemCount>
         <>
-          {visible === "none" ? (
-            <React.Fragment>
+         
+          {visible === "none" &&
               <div className="col-12">
                 <button
                   className="btn btn-outline-info"
@@ -121,10 +121,7 @@ const ItemDetail = ({
                   </NavLink>
                 </button>
               </div>
-            </React.Fragment>
-          ) : (
-            ""
-          )}
+            }
         </>
       </div>
     </>

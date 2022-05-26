@@ -1,9 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState} from "react";
 import "./ItemListContainer.css";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
-import { GlobalContext } from "../../context/CartContext";
 import { db } from "../../service/firebase";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import Loader from "../Loader/Loader";
@@ -35,7 +34,7 @@ const ItemListContainer = ({ greeting }) => {
 
   return (
     <div
-      className="col-12"
+      className="container-fluid"
       id="listContainer"
       style={{ height: "100% !important" }}
     >

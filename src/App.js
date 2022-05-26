@@ -7,7 +7,7 @@ function App() {
         <GlobalProvider>
           <Rutas />
         </GlobalProvider>
-      
+     
     </>
   );
 }
