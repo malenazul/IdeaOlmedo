@@ -15,6 +15,12 @@ const Formulario = () => {
       } = useContext(GlobalContext);
 
     const [orderID, setOrderID] = useState();
+    function mostrarOrder(order){
+       if(order){
+        window.alert("Felicidades. Su compra ha sido exitosa. Su numero de orden es: " + orderID)
+       }
+
+    }
 
     const handleChange = (e) => {
         const { id, value } = e.target;
@@ -31,8 +37,9 @@ const Formulario = () => {
         e.preventDefault();
         try {
             const oCollection = collection(db, "orders");
-            await addDoc(oCollection, formulario).then(({id})=> setOrderID(id)).then(window.alert("Felicidades. Su compra ha sido exitosa. Su numero de orden es: " + orderID));
-            console.log(orderID);
+            console.log(formulario);
+            await addDoc(oCollection, formulario).then(({id})=> setOrderID(id));
+            
             
             clear();
            
@@ -63,13 +70,13 @@ const Formulario = () => {
       });
 
     useEffect(() => {
-      console.log(formulario)
-        
+     
+        mostrarOrder(orderID);
     
       return () => {
         
       }
-    }, [formulario])
+    }, [orderID])
     
     
 

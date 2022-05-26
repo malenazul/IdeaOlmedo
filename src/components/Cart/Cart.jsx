@@ -11,19 +11,7 @@ import { useContext } from "react";
 const Cart = () => {
   const { carrito, clear, total } = useContext(GlobalContext);
 
-  function mostrarItems(){
-     carrito.map((ciudad, index) => (
-      <React.Fragment key={index}>
-        <Card
-          imagen={ciudad.pictureUrl}
-          texto={ciudad.description}
-          nombre={ciudad.title}
-          precio={ciudad.price}
-          id={ciudad.id}
-          q={ciudad.quantity}
-        ></Card>
-      </React.Fragment>))
-  }
+
 
   return (
     <div className="card col-12" id="listContainer">
@@ -34,7 +22,7 @@ const Cart = () => {
         <h3 className="txt1">Carrito</h3>
       </div>
       <>
-        {carrito.length > 0 ? (
+        {carrito.length > 0 && 
           <div className="row col-12" style={{ float: "center" }}>
             <button
               className="btn btn-outline-info"
@@ -49,9 +37,7 @@ const Cart = () => {
               Vaciar Carrito
             </button>
           </div>
-        ) : (
-          ""
-        )}
+       }
       </>
 
       <div className="row col-12" style={{ float: "center", margin: "1%" }}>
