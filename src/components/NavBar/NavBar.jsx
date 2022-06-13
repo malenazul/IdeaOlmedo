@@ -40,18 +40,18 @@ export default function NavBar() {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link"  to="/Category/Europa">
-              Europa
+              <NavLink className="nav-link"  to="/">
+              Paquetes
               </NavLink>
             </li>
             <li className="nav-item">
-            <NavLink className="nav-link"  to="/Category/America">
-              America
+            <NavLink className="nav-link"  to="/">
+              Vuelos
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/Category/Asia">
-                Asia
+              <NavLink className="nav-link" to="/">
+                Alojamientos
               </NavLink>
             </li>
             <li className="nav-item dropdown">
@@ -69,35 +69,27 @@ export default function NavBar() {
                 aria-labelledby="navbarDropdownMenuLink"
               >
                 <li>
+                <a className="dropdown-item" href="#">
+                <NavLink className="nav-link"  to="/Category/Europa">
+              Europa
+              </NavLink>
+              </a> 
+                </li>
+                <li>
                   <a className="dropdown-item" href="#">
-                    Francia
+                  <NavLink className="nav-link"  to="/Category/America">
+              America
+              </NavLink>
                   </a>
                 </li>
                 <li>
                   <a className="dropdown-item" href="#">
-                    Inglaterra
+                  <NavLink className="nav-link" to="/Category/Asia">
+                Asia
+              </NavLink>
                   </a>
                 </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Italia
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Croacia
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Grecia
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Portugal
-                  </a>
-                </li>
+               
               </ul>
             </li>
           </ul>

@@ -103,6 +103,13 @@ const Formulario = () => {
         Ingrese su email
       </div>
   </div>
+  <div className="col-md-8">
+    <label className="form-label">Confirmar Email</label>
+      <input type="text" className="form-control" id="email" aria-describedby="inputGroupPrepend" onChange={handleChange} required/>
+      <div className="invalid-feedback">
+        Ingrese su email
+      </div>
+  </div>
  
   <div className="col-12">
     <button className="btn btn-primary" type="submit"   style={{marginTop: "3%"}}>Terminar compra de USD {total}</button>

@@ -98,36 +98,7 @@ const Cart = () => {
           </>
         </div>
       </div>
-      {/* <>
-        {carrito.length > 0 ? (
-          <><div className="container">
-            <Formulario />
-          </div><div
-            className="card"
-            style={{
-              width: "16rem",
-              marginLeft: "3%",
-              marginBottom: "2%",
-              display: "flex",
-              justifyContent: "space-around",
-            }}
-          >
-              <button
-                className="btn btn-outline-info"
-                style={{
-                  width: "15rem",
-                  margin: "2%",
-                  display: "flex",
-                  justifyContent: "space-around",
-                }}
-              >
-                Finalizar compra con precio total de USD {total}
-              </button>
-            </div></>
-        ) : (
-          ""
-        )}
-      </> */}
+     
     </div>
   );
 };
