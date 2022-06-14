@@ -2,6 +2,14 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Check out my app!
+
+Puedes ver un demo de la aplicación en el siguiente link: [https://musical-naiad-a7d788.netlify.app/](https://musical-naiad-a7d788.netlify.app/)
+
+## GIF of the app
+
+Puedes ver un gif de la app en el siguiente link: [https://www.canva.com/design/DAFDhyTp1zA/t0U_L5AxLW__ozb2rNisog/watch?utm_content=DAFDhyTp1zA&utm_campaign=share_your_design&utm_medium=link&utm_source=shareyourdesignpanel](https://www.canva.com/design/DAFDhyTp1zA/t0U_L5AxLW__ozb2rNisog/watch?utm_content=DAFDhyTp1zA&utm_campaign=share_your_design&utm_medium=link&utm_source=shareyourdesignpanel)
+
 ## Available Scripts
 
 In the project directory, you can run:
